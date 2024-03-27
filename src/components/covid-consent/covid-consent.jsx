@@ -52,6 +52,10 @@ const CovidConsent = () => {
                 <input type="checkbox" name="symptoms" className='form-input'/>
             </label>
 
+            <div>
+                Sign Here
+            </div>
+
             <button onClick={handleSubmit} className='form-submit-button'>
                 Submit Form
             </button>
