@@ -1,64 +1,57 @@
 import useNPFormContext from "../../hooks/useNPFormContext"
+import NPFormInputs from "./np-form-inputs";
+import './npForm.css'
 
 const NPForm = () => {
 
   const {
-    page, setPage, data, setData, title
+    page, 
+    setPage, 
+    data, 
+    title, 
+    handleChange, 
+    disablePrev, 
+    disableNext, 
+    prevHide, 
+    nextHide,
+    submitHide,
+    canSubmit 
   } = useNPFormContext();
 
   function handleSubmit(e){
   e.preventDefault()
-  console.log("submit formData", formData)
+  console.log("submit formData", data)
   //on submit then email 
   }
 
-  function handlePrev(){
+  function handlePrev(e){
+    e.preventDefault()
     setPage(prev => prev-1)
+    console.log("previous ", page)
   }
 
-  function handleNext(){
+  function handleNext(e){
+    e.preventDefault()
     setPage(prev => prev+1)
+    console.log("next ", page)
   }
 
   return (
     <div className='form-container'>
-      <form className='form' onChange={handleCovidForm}>
+      <form className='form' onChange={handleChange}>
         <h2>{title[page]}</h2>
-
-        <label>Name</label>
-        <input type="text" name="name" className='form-input'/>
-
-        <label>Date</label>
-        <input type="date" name="date" className='form-input'/>
-        
-        <label>Phone Number</label>
-        <input type="text" name="phone" className='form-input'/>
-        
-        <label>
-            You have not tested positive for COVID-19 in the past 14 days.
-            <input type="checkbox" name="covidPositive" className='form-input'/>
-        </label>
-
-        <label>
-            You have not been on a flight in the past 14 days.
-            <input type="checkbox" name="flightCheck" className='form-input'/>
-        </label>
-
-        <label>
-            You do not have any covid symptoms such as fever, cough, or shortness of breath.
-            <input type="checkbox" name="symptoms" className='form-input'/>
-        </label>
-
-        <div>
-            Sign Here
-        </div>
         <div className="button-container">
-          <button className="button" onClick={handlePrev}>Prev</button>
-          <button className="button" onClick={handleNext}>Next</button>
-          <button onClick={handleSubmit} className='form-submit-button'>
+          <button className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>
+            Prev
+          </button>
+          <button className={`button ${nextHide}`} onClick={handleNext} disabled={disableNext}>
+            Next
+          </button>
+          <button onClick={handleSubmit} className={`form-submit-button ${submitHide}`} disabled={!canSubmit}>
               Submit Form
           </button>
         </div>
+        <NPFormInputs/>
       </form>
     </div>
   )

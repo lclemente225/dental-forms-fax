@@ -7,15 +7,15 @@ const NPFormInputs = () => {
 
     const display = {
         0: <PersonalInfo />,
-        1: <MedicalInfo />,
-        2: <InsuranceInfo />,
+        1: <InsuranceInfo />,
+        2: <MedicalInfo />,
         3: <CreditCardInfo />
     } 
 
   return (
-    <div>
+    <>
       {display[page]}
-    </div>
+    </>
   )
 }
 

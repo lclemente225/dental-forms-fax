@@ -1,12 +1,15 @@
 import CovidConsent from './components/covid-consent/covid-consent'
 import NPForm from './components/np-form/np-form'
+import {NPFormProvider} from './context/np-form-context'
 import './App.css'
 
 function App() {
 
   return (
     <>
-    <CovidConsent />
+      <NPFormProvider>
+        <NPForm />
+      </NPFormProvider>
     </>
   )
 }
