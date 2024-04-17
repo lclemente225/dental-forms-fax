@@ -2,6 +2,21 @@
     display: none;
 }
 
+.form-container {
+    height: 1000px;
+}
+
 .button-container {
     position: relative;
+}
+
+.form-submit-button {
+    position: absolute;
+    margin: auto;
+    bottom: 10px;
+}
+
+.np-form-input-container{
+    display: flex;
+    flex-direction: column;
 }

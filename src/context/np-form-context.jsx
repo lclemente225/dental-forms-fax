@@ -1,7 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 
-import React from 'react'
-
 const npFormContext = createContext({});
 
 export const NPFormProvider = ({children}) => {
@@ -30,17 +28,16 @@ export const NPFormProvider = ({children}) => {
     }
     const canSubmit = true
 
-    const canNextPage1 = Object.keys(data)
-        .filter(key => keystartsWith('bill') && key !== 'billAddress2')
+/*     const canNextPage1 = Object.keys(data)
+        .filter(key => keyStartsWith('bill') && key !== 'billAddress2')
         .map(key => data[key])
-        .every(Boolean)
+        .every(Boolean) */
     
     const disablePrev = page === 0
 
-    const disableNext = (page ===Object.keys(title).length -1) ||
-        (page === 0 && !canNextPage1)
+    const disableNext = (page === Object.keys(title).length -1) 
         
-    const prevHide = page === Object.keys(title).length - 1 && "remove-button"
+    const prevHide = page <= 0 && "remove-button"
 
     const nextHide = page === Object.keys(title).length - 1 && "remove-button"
 
@@ -48,15 +45,15 @@ export const NPFormProvider = ({children}) => {
 
     return (
         <npFormContext.Provider value={{
-            page, 
+            page,
             setPage,
-            data, 
-            setData, 
-            title, 
+            data,
+            setData,
+            title,
             handleChange,
-            disablePrev, 
-            disableNext, 
-            prevHide, 
+            disablePrev,
+            disableNext,
+            prevHide,
             nextHide,
             submitHide,
             canSubmit
