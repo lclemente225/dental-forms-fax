@@ -31,6 +31,7 @@ label:has([type="radio"]){
 }
 
 input[type="radio"]{
+    position: absolute;
     opacity: 0;
     cursor: pointer;
 }
@@ -40,7 +41,6 @@ input[type="radio"]{
     height: 30px;
     width: 30px;
     border-radius: 0;
-    background-color: red;
     color: orange;
     border: 2px solid black;
     position: relative;
@@ -49,15 +49,18 @@ input[type="radio"]{
 .checkmark:after {
     content: "";
     position: absolute;
-    top: 35%;
-    left: 35%;
     display: none;
-    height: auto;
-    width: auto;
+    width: 100%;
     border-radius: 0;
     background-image: url('../../assets/check-mark-svgrepo-com.svg');
 }
 
-input:checked ~ .checkmark:after {
-display: block;
+input:checked ~ .checkmark:after{
+    background-color: red;
+    display: block;
+}
+
+input:checked ~ .checkmark {
+    display: inline-block;
+    background-color: green;
 }

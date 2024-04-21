@@ -73,30 +73,36 @@ const PersonalInfo = () => {
       <div className='marital-status-inputs-container'>
         <label htmlFor="minor">
           <input type="radio" id="minor" name="marital-status" value="minor"/>
-        <span className="checkmark"/>
-        Minor
+          <span className="checkmark"/>
+          Minor
         </label>
         <label htmlFor="single"> 
         <input type="radio" id="single" name="marital-status" value="single"/>
-        <span className="checkmark"/>Single
+          <span className="checkmark"/>
+          Single
         </label>
         <label htmlFor="married"> 
-        <input type="radio" id="married" name="marital-status" value="married"/>
-        <span className="checkmark"/>Married
+          <input type="radio" id="married" name="marital-status" value="married"/>
+          <span className="checkmark"/>
+          Married
         </label>
         <label htmlFor="divorced">
-        <input type="radio" id="divorced" name="marital-status" value="divorced"/>
-        <span className="checkmark"/>Divorced
+          <input type="radio" id="divorced" name="marital-status" value="divorced"/>
+          <span className="checkmark"/>
+          Divorced
         </label>
         <label htmlFor="widowed">
-        <input type="radio" id="widowed" name="marital-status" value="widowed"/>
-        <span className="checkmark"/>Widowed
+          <input type="radio" id="widowed" name="marital-status" value="widowed"/>
+          <span className="checkmark"/>
+          Widowed
         </label>
         <label htmlFor="separated"> 
-        <input type="radio" id="separated" name="marital-status" value="separated"/>
-        <span className="checkmark"/>Separated
+          <input type="radio" id="separated" name="marital-status" value="separated"/>
+          <span className="checkmark"/>
+          Separated
         </label>
       </div>
+
     </div>
   )
 }
