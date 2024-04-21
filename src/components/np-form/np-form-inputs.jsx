@@ -1,6 +1,7 @@
 import React from 'react'
 import useNPFormContext from '../../hooks/useNPFormContext';
-import {PersonalInfo, MedicalInfo, InsuranceInfo, CreditCardInfo} from './input-components/index'
+import {PersonalInfo, MedicalInfo, InsuranceInfo, DentalHistory} from './input-components/index'
+
 
 const NPFormInputs = () => {
     const {page} = useNPFormContext();
@@ -9,7 +10,7 @@ const NPFormInputs = () => {
         0: <PersonalInfo />,
         1: <InsuranceInfo />,
         2: <MedicalInfo />,
-        3: <CreditCardInfo />
+        3: <DentalHistory />
     } 
 
   return (

@@ -1,6 +1,6 @@
 import useNPFormContext from "../../../hooks/useNPFormContext"
 
-const CreditCardInfo = () => {
+const DentalHistory = () => {
   const {data, handleChange} = useNPFormContext()
   return (
     <div>
@@ -9,4 +9,4 @@ const CreditCardInfo = () => {
   )
 }
 
-export default CreditCardInfo
+export default DentalHistory

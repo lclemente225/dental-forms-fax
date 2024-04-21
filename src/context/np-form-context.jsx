@@ -8,8 +8,8 @@ export const NPFormProvider = ({children}) => {
     const title = {
         0: 'Personal Info',
         1: 'Insurance Info',
-        2: 'Medical Info',
-        3: 'Credit Card Info'
+        2: 'Medical History',
+        3: 'Dental History'
     }
     //add handleChange fn
     //can destructure data here E.G. data.billingInfo1
@@ -25,6 +25,7 @@ export const NPFormProvider = ({children}) => {
                 [e.target.name]: e.target.value
             }))
         }
+        console.log(data)
     }
     const canSubmit = true
 

@@ -6,6 +6,7 @@ const PersonalInfo = () => {
   const {data, handleChange} = useNPFormContext()
   return (
     <div className="np-form-input-container">
+      <h2>Patient Information (Confidential)</h2>
       <label>First Name
         <input 
           type="text"
@@ -53,8 +54,8 @@ const PersonalInfo = () => {
           value={data.state}
           onChange={handleChange}>
             {
-              states.map((object) => {
-                return (<option value={object.name}>{object.abbreviation}</option>)
+              states.map((object, index) => {
+                return (<option key={index} value={object.name}>{object.abbreviation}</option>)
               })
             }
           </select>
@@ -67,6 +68,35 @@ const PersonalInfo = () => {
           onChange={handleChange}
           />
       </label>
+          
+      <h3>Check appropriate box</h3>
+      <div className='marital-status-inputs-container'>
+        <label htmlFor="minor">
+          <input type="radio" id="minor" name="marital-status" value="minor"/>
+        <span className="checkmark"/>
+        Minor
+        </label>
+        <label htmlFor="single"> 
+        <input type="radio" id="single" name="marital-status" value="single"/>
+        <span className="checkmark"/>Single
+        </label>
+        <label htmlFor="married"> 
+        <input type="radio" id="married" name="marital-status" value="married"/>
+        <span className="checkmark"/>Married
+        </label>
+        <label htmlFor="divorced">
+        <input type="radio" id="divorced" name="marital-status" value="divorced"/>
+        <span className="checkmark"/>Divorced
+        </label>
+        <label htmlFor="widowed">
+        <input type="radio" id="widowed" name="marital-status" value="widowed"/>
+        <span className="checkmark"/>Widowed
+        </label>
+        <label htmlFor="separated"> 
+        <input type="radio" id="separated" name="marital-status" value="separated"/>
+        <span className="checkmark"/>Separated
+        </label>
+      </div>
     </div>
   )
 }
