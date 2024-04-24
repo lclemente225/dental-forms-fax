@@ -22,11 +22,12 @@
 }
 .marital-status-inputs-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 55px;
-    border: 2px solid red;
 }
 
-label:has([type="radio"]){
+.marital-status-label,
+.school-status{
     cursor: pointer;
 }
 
@@ -40,9 +41,9 @@ input[type="radio"]{
     display: inline-block;
     height: 30px;
     width: 30px;
+    margin-right: 5px;
     border-radius: 0;
-    color: orange;
-    border: 2px solid black;
+    outline: 2px solid black;
     position: relative;
 }
 
@@ -52,15 +53,13 @@ input[type="radio"]{
     display: none;
     width: 100%;
     border-radius: 0;
-    background-image: url('../../assets/check-mark-svgrepo-com.svg');
 }
 
-input:checked ~ .checkmark:after{
-    background-color: red;
-    display: block;
-}
 
 input:checked ~ .checkmark {
     display: inline-block;
-    background-color: green;
+    background-image: url('../../assets/check-mark-svgrepo-com.svg');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }

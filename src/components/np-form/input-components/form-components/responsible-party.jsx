@@ -1,6 +1,8 @@
 import React from 'react'
+import useNPFormContext from '../../../hooks/useNPFormContext'
 
 const ResponsibleParty = () => {
+    const {data, handleChange} = useNPFormContext()
   return (
     <>
       <h2>Responsible Party</h2>
