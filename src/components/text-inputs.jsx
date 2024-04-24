@@ -1,5 +1,5 @@
 import React from 'react'
-import useNPFormContext from '../../../../hooks/useNPFormContext'
+import useNPFormContext from '../hooks/useNPFormContext'
 
 
 const TextInputs = (props) => {

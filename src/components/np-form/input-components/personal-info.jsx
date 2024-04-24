@@ -1,8 +1,8 @@
 import React from 'react'
 import useNPFormContext from '../../../hooks/useNPFormContext'
 import states from './states'
-import TextInputs from './form-components/text-inputs'
-import RadioInputs from './form-components/radio-inputs'
+import TextInputs from '../../text-inputs'
+import RadioInputs from '../../radio-inputs'
 import { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo } from './form-components/personal-info-form-inputs-json'
 
 const PersonalInfo = () => {
