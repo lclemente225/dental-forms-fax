@@ -1,3 +1,4 @@
+//text inputs
 const patientInfo = [
     {
         title:'First Name',
@@ -23,6 +24,74 @@ const patientInfo = [
 
 ]
 
+const schoolLocationInfo = [
+    {
+        title:'If Student, Name of School/College',
+        name:'schoolName'
+    },
+    {
+        title:'City',
+        name:'schoolCity'
+    }
+]
+
+const employerInfo = [
+    {
+        title:'Patient or Parent/Guardian Employer',
+        name:'employerName'
+    },
+    {
+        title:'Work Phone',
+        name:'employerPhone'
+    },
+    {
+        title:'Business Address',
+        name:'employerAddress'
+    },
+    {
+        title:'Business City',
+        name:'employerCity'
+    },
+    {
+        title:'Business Zip Code',
+        name:'employerZipCode'
+    }
+]
+
+const employeeInfo = [
+    {
+        title:'Spouse or Parent/Guardian',
+        name:'employeeName'
+    },
+    {
+        title:'Employer',
+        name:'employeeEmployer'
+    },
+    {
+        title:'Work Phone',
+        name:'employeePhone'
+    },
+    {
+        title:'Whom may we thank for referring you?',
+        name:'referralName'
+    },
+    {
+        title:'Emergency Contact Name',
+        name:'emergencyContactName'
+    },
+    {
+        title:'Emergency Contact Phone',
+        name:'emergencyContactPhone'
+    },
+    {
+        title:'Relationship to Patient',
+        name:'relationshipToPatient'
+    },
+    {
+    }
+]
+
+//radio inputs
 const maritalStatus = [
     {
         title: 'Minor',
@@ -62,12 +131,6 @@ const maritalStatus = [
     }
 ]
 
-const schoolLocationInfo = [
-    {
-        title:'If Student, Name of School/College',
-        
-    }
-]
 const schoolStatus = [
     {
         title:'Full Time',
@@ -82,4 +145,5 @@ const schoolStatus = [
         className:'school-status'
     }
 ]
-export { patientInfo, maritalStatus, schoolStatus }
+
+export { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo }

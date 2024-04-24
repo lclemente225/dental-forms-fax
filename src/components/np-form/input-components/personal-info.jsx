@@ -3,7 +3,7 @@ import useNPFormContext from '../../../hooks/useNPFormContext'
 import states from './states'
 import TextInputs from './form-components/text-inputs'
 import RadioInputs from './form-components/radio-inputs'
-import { patientInfo,maritalStatus,schoolStatus } from './form-components/personal-info-form-inputs-json'
+import { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo } from './form-components/personal-info-form-inputs-json'
 
 const PersonalInfo = () => {
   const {data, handleChange} = useNPFormContext()
@@ -51,23 +51,18 @@ const PersonalInfo = () => {
           })
         }
       </div>
-<hr/>
-      <label>If Student, Name of School/College
-        <input 
-          type="text"
-          name="school"
-          value={data.school}
-          onChange={handleChange}
-          />
-      </label>   
-      <label>City
-        <input 
-          type="text"
-          name="schoolCity"
-          value={data.schoolCity}
-          onChange={handleChange}
-          />
-      </label>   
+      <hr/>
+      {
+        schoolLocationInfo.map((object, index) => {
+          return (
+            <TextInputs 
+              key={index} 
+              title={object["title"]} 
+              name={object["name"]} 
+            />
+          )
+        })
+      } 
       <label>State/Province
            <select 
             name="schoolStateProvince"
@@ -90,39 +85,17 @@ const PersonalInfo = () => {
         })
       }
       <hr/>
-
-      <label>Patient or Parent/Guardian's Employer
-        <input 
-          type="text"
-          name="employerName"
-          value={data.employerName}
-          onChange={handleChange}
-          />
-      </label>
-      <label>Work Phone
-        <input 
-          type="text"
-          name="employerPhone"
-          value={data.employerPhone}
-          onChange={handleChange}
-          />
-      </label>
-      <label>Business Address
-        <input 
-          type="text"
-          name="employerAddress"
-          value={data.employerAddress}
-          onChange={handleChange}
-          />
-      </label>
-      <label>Business City
-        <input 
-          type="text"
-          name="employerCity"
-          value={data.employerCity}
-          onChange={handleChange}
-          />
-      </label>  
+      {
+        employerInfo.map((object, index) => {
+          return (
+            <TextInputs 
+            key={index} 
+            title={object["title"]} 
+            name={object["name"]} 
+            />
+          )
+        })
+      }
       <label>Business State / Province
            <select 
           name="employerStateProvince"
@@ -131,15 +104,17 @@ const PersonalInfo = () => {
             { stateSelect }
             </select>
       </label>  
-      <label>Business Zip Code
-        <input 
-          type="text"
-          name="employerZipCode"
-          value={data.employerZipCode}
-          onChange={handleChange}
-          />
-      </label>  
-
+      {
+        employeeInfo.map((object, index) => {
+          return (
+            <TextInputs 
+            key={index} 
+            title={object["title"]} 
+            name={object["name"]} 
+            />
+          )
+        })
+      }
     </div>
   )
 }
