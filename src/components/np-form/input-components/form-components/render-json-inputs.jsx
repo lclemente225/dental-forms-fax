@@ -1,14 +1,12 @@
 import React from 'react'
 import TextInputs from '../../../text-inputs'
 import RadioInputs from '../../../radio-inputs'
-import '../../npForm.css'
 
 const RenderJSONInputs = ({arrayOfJson}) => {
   return (
     <>
       {
       arrayOfJson.map((object, index) => {
-        console.log(object.type)
         if(object.type !== undefined && object.type !== 'radio'){
             return <TextInputs 
                       key={index} 
