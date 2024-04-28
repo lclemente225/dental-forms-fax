@@ -2,7 +2,6 @@ import React from 'react'
 import useNPFormContext from '../../../hooks/useNPFormContext'
 import states from './states'
 import TextInputs from '../../text-inputs'
-import RadioInputs from '../../radio-inputs'
 import RenderJSONInputs from './form-components/render-json-inputs'
 import { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo } from './form-components/personal-info-form-inputs-json'
 
@@ -31,18 +30,8 @@ const PersonalInfo = () => {
       <RenderJSONInputs arrayOfJson={maritalStatus} />
         
       </div>
-      <hr/>
-      {
-        schoolLocationInfo.map((object, index) => {
-          return (
-            <TextInputs 
-              key={index} 
-              title={object["title"]} 
-              name={object["name"]} 
-            />
-          )
-        })
-      } 
+      <hr/> 
+      <RenderJSONInputs arrayOfJson={schoolLocationInfo} />
       <label>State/Province
            <select 
             name="schoolStateProvince"
@@ -51,31 +40,9 @@ const PersonalInfo = () => {
             { stateSelect }
           </select>
       </label> 
-      {
-        schoolStatus.map((object, index) => {
-          return (
-            <RadioInputs
-              key={index}
-              id={object.id}
-              name={object["name"]}
-              className={object["className"]}
-              title={object["title"]}
-            />
-          )
-        })
-      }
+      <RenderJSONInputs arrayOfJson={schoolStatus} />
       <hr/>
-      {
-        employerInfo.map((object, index) => {
-          return (
-            <TextInputs 
-            key={index} 
-            title={object["title"]} 
-            name={object["name"]} 
-            />
-          )
-        })
-      }
+      <RenderJSONInputs arrayOfJson={employerInfo} />
       <label>Business State / Province
            <select 
           name="employerStateProvince"
@@ -84,17 +51,7 @@ const PersonalInfo = () => {
             { stateSelect }
             </select>
       </label>  
-      {
-        employeeInfo.map((object, index) => {
-          return (
-            <TextInputs 
-            key={index} 
-            title={object["title"]} 
-            name={object["name"]} 
-            />
-          )
-        })
-      }
+      <RenderJSONInputs arrayOfJson={employeeInfo} />
     </div>
   )
 }
