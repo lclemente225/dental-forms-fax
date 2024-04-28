@@ -3,6 +3,7 @@ import useNPFormContext from '../../../hooks/useNPFormContext'
 import states from './states'
 import TextInputs from '../../text-inputs'
 import RadioInputs from '../../radio-inputs'
+import RenderJSONInputs from './form-components/render-json-inputs'
 import { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo } from './form-components/personal-info-form-inputs-json'
 
 const PersonalInfo = () => {
@@ -13,17 +14,7 @@ const PersonalInfo = () => {
   return (
     <div className="np-form-input-container">
       <h2>Patient Information (Confidential)</h2> 
-      {
-        patientInfo.map((object,index) => {
-          return (
-            <TextInputs 
-              key={index}
-              title={object["title"]} 
-              name={object["name"]} 
-            />
-          )
-        })
-      }
+      <RenderJSONInputs arrayOfJson={patientInfo} />
       
       <label>State
         <select 
@@ -33,23 +24,12 @@ const PersonalInfo = () => {
             { stateSelect }
         </select>
       </label>
-      <TextInputs title="Phone Number" name="phoneNum"/>
+      <TextInputs title="Phone Number" name="phoneNum" type="tel"/>
           
       <h3>Check appropriate box</h3>
       <div className='marital-status-inputs-container'>
-        {
-          maritalStatus.map((object,index) => {
-              return (
-                <RadioInputs 
-                  key={index}
-                  id={object.id} 
-                  name={object["name"]} 
-                  className={object["className"]} 
-                  title={object["title"]}
-                />
-              )
-          })
-        }
+      <RenderJSONInputs arrayOfJson={maritalStatus} />
+        
       </div>
       <hr/>
       {

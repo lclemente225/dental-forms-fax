@@ -97,37 +97,44 @@ const maritalStatus = [
         title: 'Minor',
         id:'minor',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
+
     },
     {
         title: 'Single',
         id:'single',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
     },
     {
         title: 'Married',
         id:'married',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
     },
     {
         title: 'Divorced',
         id:'divorced',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
     },
     {
         title: 'Widowed',
         id:'widowed',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
     },
     {
         title: 'Separated',
         id:'separated',
         name: 'maritalStatus',
-        className:'marital-status-label'
+        className:'marital-status-label',
+        type:'radio'
     }
 ]
 
@@ -136,13 +143,15 @@ const schoolStatus = [
         title:'Full Time',
         id:'schoolFullTime',
         name:'schoolStatus',
-        className:'school-status'
+        className:'school-status',
+        type:'radio'
     },
     {
         title:'Part Time',
         id:'schoolPartTime',
         name:'schoolStatus',
-        className:'school-status'
+        className:'school-status',
+        type:'radio'
     }
 ]
 
