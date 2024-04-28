@@ -1,52 +1,14 @@
 import React from 'react'
 import useNPFormContext from '../../../hooks/useNPFormContext'
+import RenderJSONInputs from './render-json-inputs'
+import responsibleParty from './personal-info-form-inputs-json'
 
 const ResponsibleParty = () => {
     const {data, handleChange} = useNPFormContext()
   return (
     <>
       <h2>Responsible Party</h2>
-      <label>First Name
-        <input 
-          type="text"
-          name="responsiblePersonFirstName"
-          value={data.ResponsibleFirstName}
-          onChange={handleChange}
-          />
-      </label>
-      <label>Last Name
-        <input 
-          type="text"
-          name="responsiblePersonLastName"
-          value={data.ResponsibleLastName}
-          onChange={handleChange}
-          />
-        </label>
-
-      <label>Address
-        <input 
-          type="text"
-          name="address"
-          value={data.address}
-          onChange={handleChange}
-          />
-      </label>
-      <label>City
-        <input 
-          type="text"
-          name="city"
-          value={data.city}
-          onChange={handleChange}
-          />
-      </label>
-      <label>Zip Code
-        <input 
-          type="text"
-          name="zipCode"
-          value={data.zipCode}
-          onChange={handleChange}
-          />
-      </label>
+      <RenderJSONInputs arrayOfJson={responsibleParty}/>
       <label>State
         <select 
           name="state"

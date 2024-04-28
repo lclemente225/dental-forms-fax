@@ -1,25 +1,33 @@
+
 //text inputs
 const patientInfo = [
     {
         title:'First Name',
-        name:'firstName'
+        name:'firstName',
+        required: true
     }, 
     {
         title:'Last Name',
-        name:'lastName'
+        name:'lastName',
+        required: true
     },
     {
         title:'Address',
-        name:'address'
+        name:'address',
+        required: true
     },
     {
         title:'City',
-        name:'city'
+        name:'city',
+        required: true
     }
     , 
     {
         title:'Zip Code',
-        name:'zipCode'
+        name:'zipCode',
+        type:'zipCode',
+        pattern:'[0-9]*',
+        required: true
     },
 
 ]
@@ -54,7 +62,9 @@ const employerInfo = [
     },
     {
         title:'Business Zip Code',
-        name:'employerZipCode'
+        name:'employerZipCode',
+        type:'zipCode',
+        pattern:'[0-9]*'
     }
 ]
 
@@ -88,6 +98,30 @@ const employeeInfo = [
         name:'relationshipToPatient'
     },
     {
+    }
+]
+
+const responsibleParty = [
+    {
+        title:'FirstName',
+        name:'responsiblePartyFirstName'
+    },
+    {
+        title:'Last Name',
+        name:'responsiblePartyLastName'
+    },
+    {
+        title:'Address',
+        name:'responsiblePartyAddress'
+    },
+    {
+        title:'City',
+        name:'responsiblePartyCity'
+    },
+    {
+        title:'Zip Code',
+        name:'responsiblePartyZipCode',
+        pattern:'[0-9]*'
     }
 ]
 
@@ -155,4 +189,6 @@ const schoolStatus = [
     }
 ]
 
-export { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo }
+
+
+export { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo, responsibleParty }

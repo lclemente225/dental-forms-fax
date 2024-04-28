@@ -8,11 +8,13 @@ const RenderJSONInputs = ({arrayOfJson}) => {
       {
       arrayOfJson.map((object, index) => {
         if(object.type !== undefined && object.type !== 'radio'){
-            return <TextInputs 
+            return <TextInputs  
                       key={index} 
                       title={object["title"]} 
                       name={object["name"]} 
                       type={object["type"]}
+                      pattern={object.pattern && object.pattern}
+                      {...(object.required ? { required: true } : {})}
                     />
         } else if(object.type === 'radio') {
           return <RadioInputs 
@@ -21,6 +23,7 @@ const RenderJSONInputs = ({arrayOfJson}) => {
                     name={object["name"]} 
                     className={object["className"]} 
                     title={object["title"]}
+                    {...(object.required ? { required: true } : {})}
                   />
         }
         else {
@@ -28,6 +31,7 @@ const RenderJSONInputs = ({arrayOfJson}) => {
                     key={index} 
                     title={object["title"]} 
                     name={object["name"]} 
+                    {...(object.required ? { required: true } : {})}
                   />
         }
       })
