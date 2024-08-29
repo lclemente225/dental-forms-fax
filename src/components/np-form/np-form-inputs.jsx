@@ -11,7 +11,7 @@ const NPFormInputs = () => {
         1: <InsuranceInfo />,
         2: <MedicalInfo />,
         3: <DentalHistory />
-    } 
+    }
 
   return (
     <>

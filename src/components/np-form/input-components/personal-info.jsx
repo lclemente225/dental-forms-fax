@@ -1,6 +1,6 @@
 import React from 'react'
 import useNPFormContext from '../../../hooks/useNPFormContext'
-import states from './states'
+import states from './form-components/states'
 import TextInputs from '../../text-inputs'
 import RenderJSONInputs from './form-components/render-json-inputs'
 import { patientInfo, maritalStatus, schoolLocationInfo, schoolStatus, employerInfo, employeeInfo } from './form-components/personal-info-form-inputs-json'

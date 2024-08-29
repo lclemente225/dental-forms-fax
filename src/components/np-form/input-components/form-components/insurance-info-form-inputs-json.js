@@ -48,3 +48,5 @@ const primaryInsuranceInfo = [
         type:'number'
     }
 ]
+
+export { primaryInsurance1, primaryInsuranceEmployerInfo, primaryInsuranceInfo }
