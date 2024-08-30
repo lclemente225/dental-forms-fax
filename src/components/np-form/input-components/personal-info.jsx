@@ -13,11 +13,11 @@ const PersonalInfo = () => {
 
   return (
     <div className="np-form-input-container">
-      <h2>Patient Information (Confidential)</h2> 
       <RenderJSONInputs arrayOfJson={patientInfo} />
       
       <label>State
         <select 
+          className='stateStyle'
           name="state"
           value={data.state}
           onChange={handleChange}>
@@ -35,6 +35,7 @@ const PersonalInfo = () => {
       <RenderJSONInputs arrayOfJson={schoolLocationInfo} />
       <label>State/Province
            <select 
+            className='stateStyle'
             name="schoolStateProvince"
             value={data.schoolStateProvince}
             onChange={handleChange}>
@@ -48,6 +49,7 @@ const PersonalInfo = () => {
       <RenderJSONInputs arrayOfJson={employerInfo} />
       <label>Business State / Province
            <select 
+          className='stateStyle'
           name="employerStateProvince"
           value={data.employerStateProvince}
           onChange={handleChange}>

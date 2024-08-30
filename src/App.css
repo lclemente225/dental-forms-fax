@@ -19,20 +19,46 @@
     margin-bottom: 20px;
 }
 
+.button-container {
+    display: grid;
+    grid-template-columns: [first]4fr [second]2fr [third]4fr [last];
+    width: 100%;
+    margin: 20px 0;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.next-button{
+    grid-column-start: third;
+    grid-column-end: last;
+}
+
 .form-submit-button {
-    padding: 10px 0;
+    padding: 5px 0;
     border-radius: 10px;
     border: none;
     background-color: slateblue;
     color: white;
     font-weight: 600;
     font-size: 1.2rem;
-    width: 50%;
+    width: 100%;
     margin: auto;
     cursor: pointer;
+    grid-column-start: third;
+    grid-column-end: last;
 }
 
 .form-submit-button:hover {
     background-color: rgb(75, 80, 175);
 
+}
+
+.remove-button {
+    display: none;
+}
+
+.stateStyle{
+    margin-left: 10px;
 }

@@ -44,7 +44,7 @@ const NPForm = () => {
             <button className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>
               Prev
             </button>
-            <button className={`button ${nextHide}`} onClick={handleNext} disabled={disableNext}>
+            <button className={`next-button button ${nextHide}`} onClick={handleNext} disabled={disableNext}>
               Next
             </button>
             <button onClick={handleSubmit} className={`form-submit-button ${submitHide}`} disabled={!canSubmit}>

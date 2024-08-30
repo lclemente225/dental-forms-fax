@@ -48,6 +48,7 @@ const InsuranceInfo = () => {
       <RenderJSONInputs arrayOfJson={primaryInsuranceInfo}/>
       <label>State
         <select 
+          className='stateStyle'
           name="InsEmployerState"
           value={data.InsEmployerState}
           onChange={handleChange}>
