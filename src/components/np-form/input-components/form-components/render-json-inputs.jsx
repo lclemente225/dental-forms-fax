@@ -7,7 +7,7 @@ const RenderJSONInputs = ({arrayOfJson}) => {
     <>
       {
       arrayOfJson.map((object, index) => {
-        if(object.type !== undefined && object.type !== 'radio'){
+        if(object.type !== 'radio'){
             return <TextInputs  
                       key={index} 
                       title={object["title"]} 
@@ -31,6 +31,7 @@ const RenderJSONInputs = ({arrayOfJson}) => {
                     key={index} 
                     title={object["title"]} 
                     name={object["name"]} 
+                    type={object["type"] ? object["type"] : undefined}
                     {...(object.required ? { required: true } : {})}
                   />
         }

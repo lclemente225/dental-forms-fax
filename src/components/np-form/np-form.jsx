@@ -17,22 +17,22 @@ const NPForm = () => {
       submitHide,
       canSubmit 
     } = useNPFormContext();
-
+    
     function handleSubmit(e){
     e.preventDefault()
     console.log("submit formData", data)
-    //on submit then email 
+    //on submit then email or fax
     }
 
     function handlePrev(e){
       e.preventDefault()
-      setPage(prev => prev-1)
+      setPage(prev => prev-=1)
       console.log("previous ", page)
     }
 
     function handleNext(e){
       e.preventDefault()
-      setPage(prev => prev+1)
+      setPage(prev => prev+=1)
       console.log("next ", page)
     }
 

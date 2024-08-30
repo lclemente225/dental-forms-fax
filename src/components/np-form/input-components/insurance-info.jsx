@@ -1,11 +1,17 @@
 import {useState,useEffect} from 'react'
 import useNPFormContext from '../../../hooks/useNPFormContext'
 import RenderJSONInputs from './form-components/render-json-inputs'
-import { primaryInsurance1,primaryInsuranceEmployerInfo, primaryInsuranceInfo } from './form-components/insurance-info-form-inputs-json'
+import { insuredPatientInfo, primaryInsurance1,primaryInsuranceEmployerInfo, primaryInsuranceInfo, secondaryInsuranceInfo } from './form-components/insurance-info-form-inputs-json'
+import states from './form-components/states'
+import RadioInputs from '../../radio-inputs'
 
 const InsuranceInfo = () => {
   const {data, handleChange} = useNPFormContext();
   const [addressState, addressStateSet] = useState(false)
+  const [secondaryInsState, secondaryInsStateSet] = useState(false)
+  const stateSelect = states.map((object, index) => {
+    return (<option key={index} value={object.name}>{object.abbreviation}</option>)
+  })
 
   function setAddress(e){
       console.log("setting address",e.checked)
@@ -20,17 +26,53 @@ const InsuranceInfo = () => {
 
   return (
     <div>
-      Insurance Info (Confidential)
-      <div style={{display:'flex',flexDirection:'column'}}>
-          Is it the same address as the patient?
+      <h3>Primary Insurance Info</h3>
+      <div style={{display:'flex',gap:'4px'}}>
+          Does the insurance holder have the employer as the patient?
           <input type="checkbox" onClick={(e) => {
             addressStateSet((x) => !x)
-            setAddress(e)}}/>
-          {!addressState && <RenderJSONInputs arrayOfJson={primaryInsurance1}/>}
+            setAddress(e)
+            }}/>
       </div>
-      <hr style={{height:'10px',outline:'2px solid red', margin:'50px 0'}}/>
+      <div className='np-form-input-container'>
+      <RenderJSONInputs arrayOfJson={primaryInsurance1}/>
+            
+      {
+      !addressState && (<>
+      <h3>Patient Info</h3>
+      <RenderJSONInputs arrayOfJson={insuredPatientInfo}/>
+      </>) 
+      }
+      </div>
+      <div className="np-form-input-container">
       <RenderJSONInputs arrayOfJson={primaryInsuranceInfo}/>
-      <RenderJSONInputs arrayOfJson={primaryInsuranceEmployerInfo}/>
+      <label>State
+        <select 
+          name="InsEmployerState"
+          value={data.InsEmployerState}
+          onChange={handleChange}>
+            { stateSelect }
+        </select>
+      </label>
+      </div>
+
+      <div style={{display:'flex',gap:'4px'}}>
+          Do you have a secondary insurance?
+          <input type="checkbox" onClick={(e) => {
+            secondaryInsStateSet((x) => !x)
+            }}
+            placeholder='wat'
+            />
+      </div>
+      {
+        secondaryInsState &&
+        <div  className='np-form-input-container'>
+          <h3>Secondary Insurance Info</h3>
+          <RenderJSONInputs arrayOfJson={secondaryInsuranceInfo}/>
+        </div>
+      }
+
+
     </div>
   )
 }

@@ -10,6 +10,7 @@ const PersonalInfo = () => {
   const stateSelect = states.map((object, index) => {
     return (<option key={index} value={object.name}>{object.abbreviation}</option>)
   })
+
   return (
     <div className="np-form-input-container">
       <h2>Patient Information (Confidential)</h2> 
@@ -25,7 +26,7 @@ const PersonalInfo = () => {
       </label>
       <TextInputs title="Phone Number" name="phoneNum" type="tel"/>
           
-      <h3>Check appropriate box</h3>
+      <h3>Marital Status</h3>
       <div className='marital-status-inputs-container'>
       <RenderJSONInputs arrayOfJson={maritalStatus} />
         
@@ -40,8 +41,10 @@ const PersonalInfo = () => {
             { stateSelect }
           </select>
       </label> 
+      <h3>Are you working or going to school full time or part time?</h3>
       <RenderJSONInputs arrayOfJson={schoolStatus} />
       <hr/>
+      <h3>Employer Info</h3>
       <RenderJSONInputs arrayOfJson={employerInfo} />
       <label>Business State / Province
            <select 
@@ -51,6 +54,7 @@ const PersonalInfo = () => {
             { stateSelect }
             </select>
       </label>  
+      <h3>Your info</h3>
       <RenderJSONInputs arrayOfJson={employeeInfo} />
     </div>
   )

@@ -45,7 +45,7 @@ const schoolLocationInfo = [
 
 const employerInfo = [
     {
-        title:'Patient or Parent/Guardian Employer',
+        title:'Patient\'s or Parent/Guardian\'s Employer',
         name:'employerName'
     },
     {
@@ -96,8 +96,6 @@ const employeeInfo = [
     {
         title:'Relationship to Patient',
         name:'relationshipToPatient'
-    },
-    {
     }
 ]
 

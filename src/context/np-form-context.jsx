@@ -25,7 +25,7 @@ export const NPFormProvider = ({children}) => {
                 [e.target.name]: e.target.value
             }))
         }
-        console.log(data)
+        console.log("chhhanges", data)
     }
     const canSubmit = true
 
